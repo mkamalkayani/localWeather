@@ -1,3 +1,3 @@
 # localWeather
 
-This website will displat local weather at the user's current location.
+This website will display local weather at the user's current location.
