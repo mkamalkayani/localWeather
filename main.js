@@ -1,7 +1,8 @@
-var userLocation = document.querySelector("p.user_location");
-var weatherDescription = document.querySelector("p.weather_description");
-var windSpeed = document.querySelector("p.wind_speed");
+var userLocation = document.querySelector(".user_location");
+var weatherDescription = document.querySelector(".weather_description");
+var windSpeed = document.querySelector(".wind_speed");
 var weatherIcon = document.querySelector("img.weather_icon");
+var temp = document.querySelector(".temperature");
 
 /*if(!navigator.geolocation){
 	console.log("Geolocation not supported by the browser");}
@@ -25,7 +26,8 @@ fetch(URL)
 		//console.log(weatherData)
 		userLocation.innerHTML = weatherData.name;
 		weatherDescription.innerHTML = weatherData.weather["0"].description;
-		windSpeed.innerHTML = weatherData.wind.deg + " " + weatherData.wind.speed;
+		windSpeed.innerHTML = Math.floor(weatherData.wind.deg) + " " + weatherData.wind.speed;
+		temp.innerHTML = Math.floor((weatherData.main.temp - 273.0)) + " &#8451";
 
 		var weatherIconCode = weatherData.weather["0"].icon;
 		weatherIcon.src = "http://openweathermap.org/img/w/" + weatherIconCode + ".png";
