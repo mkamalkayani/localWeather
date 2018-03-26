@@ -1,5 +1,5 @@
-var userLocation = document.querySelector("p.user_location");
-var weatherDescription = document.querySelector("p.weather_description");
+//var userLocation = document.querySelector("p.user_location");
+//var weatherDescription = document.querySelector("p.weather_description");*/
 
 /*if(!navigator.geolocation){
 	console.log("Geolocation not supported by the browser");}
@@ -21,5 +21,7 @@ fetch(URL)
 	})
 	.then(function(weatherData){
 		console.log(weatherData)
-		userLocation.innerHTML = weatherData.name;
+		document.querySelector("p.user_location").innerHTML = weatherData.name;
+		document.querySelector("p.weather_description").innerHTML = weatherData.weather["0"].description;
+		document.querySelector("p.wind_speed").innerHTML = weatherData.wind.deg + " " + weatherData.wind.speed;
 	});
