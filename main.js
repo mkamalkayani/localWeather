@@ -1,5 +1,7 @@
-//var userLocation = document.querySelector("p.user_location");
-//var weatherDescription = document.querySelector("p.weather_description");*/
+var userLocation = document.querySelector("p.user_location");
+var weatherDescription = document.querySelector("p.weather_description");
+var windSpeed = document.querySelector("p.wind_speed");
+var weatherIcon = document.querySelector("img.weather_icon");
 
 /*if(!navigator.geolocation){
 	console.log("Geolocation not supported by the browser");}
@@ -20,14 +22,12 @@ fetch(URL)
 		return response.json();
 	})
 	.then(function(weatherData){
-		console.log(weatherData)
-		document.querySelector("p.user_location").innerHTML = weatherData.name;
-		document.querySelector("p.weather_description").innerHTML = weatherData.weather["0"].description;
-		document.querySelector("p.wind_speed").innerHTML = weatherData.wind.deg + " " + weatherData.wind.speed;
+		//console.log(weatherData)
+		userLocation.innerHTML = weatherData.name;
+		weatherDescription.innerHTML = weatherData.weather["0"].description;
+		windSpeed.innerHTML = weatherData.wind.deg + " " + weatherData.wind.speed;
 
 		var weatherIconCode = weatherData.weather["0"].icon;
-		console.log(weatherIconCode);
-		weatherIconUrl = "http://openweathermap.org/img/w/" + weatherIconCode + ".png";
-		document.querySelector("img.weather_icon").src = weatherIconUrl;
+		weatherIcon.src = "http://openweathermap.org/img/w/" + weatherIconCode + ".png";
 	});
 
