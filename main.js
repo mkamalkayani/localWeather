@@ -24,4 +24,10 @@ fetch(URL)
 		document.querySelector("p.user_location").innerHTML = weatherData.name;
 		document.querySelector("p.weather_description").innerHTML = weatherData.weather["0"].description;
 		document.querySelector("p.wind_speed").innerHTML = weatherData.wind.deg + " " + weatherData.wind.speed;
+
+		var weatherIconCode = weatherData.weather["0"].icon;
+		console.log(weatherIconCode);
+		weatherIconUrl = "http://openweathermap.org/img/w/" + weatherIconCode + ".png";
+		document.querySelector("img.weather_icon").src = weatherIconUrl;
 	});
+
