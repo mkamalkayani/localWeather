@@ -1,9 +1,10 @@
-var userLocation = document.querySelector(".user-location");
-var weatherDescription = document.querySelector(".weather-description");
-var windSpeed = document.querySelector(".wind-speed");
-var windDirection = 0;
-var weatherIcon = document.querySelector("img.weather-icon");
-var temp = document.querySelector(".temperature");
+$(function(){
+
+function degToCompass(num){
+    const val =  Math.floor((num / 45) + 0.5);
+    const arr = ["N","NE","E", "SE","S","SW","W","NW"];
+    return arr[(val % 8)]
+    }
 
 /*if(!navigator.geolocation){
 	console.log("Geolocation not supported by the browser");}
@@ -23,15 +24,13 @@ fetch(URL)
 	.then(function(response){
 		return response.json();
 	})
-	.then(function(weatherData){
-		console.log(weatherData)
-		userLocation.innerHTML = weatherData.name + ", " + weatherData.sys.country;
-		weatherDescription.innerHTML = weatherData.weather["0"].description;
-		windDirection = Math.floor(weatherData.wind.deg);
-		windSpeed.innerHTML = "SW" + " " + weatherData.wind.speed + " knots";
-		temp.innerHTML = Math.floor(weatherData.main.temp) + " &#8451";
-
-		var weatherIconCode = weatherData.weather["0"].icon;
-		weatherIcon.src = "http://openweathermap.org/img/w/" + weatherIconCode + ".png";
+	.then(function(wData){   //wData is Weather Data
+		//console.log(wData)
+		$(".user-location").html(wData.name + ", " + wData.sys.country);
+		$(".weather-description").html(wData.weather["0"].description);
+		$(".wind-speed").html(degToCompass(wData.wind.deg) + " " + wData.wind.speed + " knots");
+		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
+		$(".weather-icon").attr('src',"http://openweathermap.org/img/w/" + wData.weather["0"].icon + ".png");
 	});
 
+});
