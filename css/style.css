@@ -1,0 +1,36 @@
+h1{
+	text-align: center;
+	margin-bottom: 25px;
+}
+.user-location {
+	text-align: center;
+	font-size: 16px;
+}
+
+.temp-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.temperature {
+	margin: auto 12px;
+	font-size: 22px;
+}
+
+.weather_icon {
+}
+
+.user-container {
+	display: flex;
+	justify-content: center;
+}
+
+.weather-description, .wind-speed {
+	font-size: 16px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 12px;
+	margin: 0 3px;
+	/*color: green;*/
+}
