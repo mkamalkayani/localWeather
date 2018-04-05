@@ -16,8 +16,19 @@ h1{
 	border-radius: 10px;
 }
 
+.flex1{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .user-location {
 	text-align: center;
+	font-size: 16px;
+	margin: 0;
+}
+
+.temp-Unit-button {
 	font-size: 16px;
 }
 
@@ -27,9 +38,13 @@ h1{
 	margin-bottom: 10px;
 }
 
-.temperature {
+.temperature{
 	margin: auto 12px;
 	font-size: 22px;
+}
+
+.temp-button {
+	align-items: right;
 }
 
 .weather_icon {

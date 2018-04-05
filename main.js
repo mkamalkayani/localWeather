@@ -29,8 +29,9 @@ fetch(URL)
 		$(".user-location").html(wData.name + ", " + wData.sys.country);
 		$(".weather-description").html(wData.weather["0"].description);
 		$(".wind-speed").html(degToCompass(wData.wind.deg) + " " + wData.wind.speed + " knots");
-		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
 		$(".weather-icon").attr('src',"https://openweathermap.org/img/w/" + wData.weather["0"].icon + ".png");
+
+		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
 	});
 
 });
