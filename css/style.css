@@ -1,15 +1,21 @@
+body{
+	background-color: lightcyan;
+	margin-top: 25px;
+}
+
 h1{
 	text-align: center;
 	margin-bottom: 25px;
 }
 
 .container{
-	border: solid 2px gray;
+	background-color: #24C2DA;
+	padding: 30px;
+	max-width: 450px;
+	min-width: 300px;
 	border-radius: 10px;
-	padding: 20px;
-	width: 60%;
-
 }
+
 .user-location {
 	text-align: center;
 	font-size: 16px;
