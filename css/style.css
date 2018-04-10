@@ -29,7 +29,23 @@ h1{
 }
 
 .temp-Unit-button {
-	font-size: 16px;
+	display: flex;
+	background-color: lightgrey;
+}
+
+label {
+	background-color: lightblue;
+	margin:auto;
+}
+
+input[name="Unit"] {
+	display: none;
+}
+
+.temp-Unit-button label {
+	font-size: 20px;
+	padding: 2px;
+	flex-basis: 40px;
 }
 
 .temp-container {
@@ -45,6 +61,10 @@ h1{
 
 .temp-button {
 	align-items: right;
+}
+
+input:checked {
+	background-color: red;
 }
 
 .weather_icon {

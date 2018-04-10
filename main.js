@@ -32,6 +32,12 @@ fetch(URL)
 		$(".weather-icon").attr('src',"https://openweathermap.org/img/w/" + wData.weather["0"].icon + ".png");
 
 		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
+		$("input#degree").on("change", function(){
+			$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
+		})
+		$("input#fahrenheit").on("change", function(){
+			$(".temperature").html(Math.floor(wData.main.temp * 9/5 + 32) + " &#8457")
+		})
 	});
 
 });

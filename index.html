@@ -22,8 +22,14 @@
 		<div class="flex1">
 			<p class="user-location">user location</p>
 			<div class="temp-Unit-button">
-				<button>&deg;C</button>
-				<button>F</button>
+				<label for="degree">&deg;C</label>
+				<input type="radio" id="degree" name="Unit" value="C" checked>
+
+				<label for="fahrenheit">&deg;F</label>
+				<input type="radio" id="fahrenheit" name="Unit" value="F">
+
+				<!-- <button id="degree">&deg;C</button>
+				<button id="fahrenheit">F</button> -->
 			</div>
 		</div>
 		<div class="temp-container">
