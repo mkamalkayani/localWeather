@@ -1,19 +1,15 @@
-body{
-	background-color: lightcyan;
-	margin-top: 25px;
+.container{
+	background-color: #24C2DA;
+	padding: 30px;
+	max-width: 768px;
+	border-radius: 10px;
+	background: lightblue url("../images/clear-sky.jpg") no-repeat fixed center; 
 }
 
 h1{
 	text-align: center;
 	margin-bottom: 25px;
-}
-
-.container{
-	background-color: #24C2DA;
-	padding: 30px;
-	max-width: 450px;
-	min-width: 300px;
-	border-radius: 10px;
+	font-size: 24px;
 }
 
 .flex1{
@@ -23,18 +19,22 @@ h1{
 }
 
 .user-location {
+	font-size: 18px;
 	text-align: center;
-	font-size: 16px;
 	margin: 0;
 }
 
 .temp-Unit-button {
 	display: flex;
-	/*background-color: lightgrey;*/
+}
+
+.temp-Unit-button label {
+	font-size: 18px;
+	padding: 2px 6px;
+	flex-basis: 40px;
 }
 
 label {
-	/*background-color: lightblue;*/
 	margin:auto;
 }
 
@@ -43,19 +43,13 @@ input[name="Unit"] {
 }
 
 label[for="degree"] {
-	/*background-color: grey;*/
 	color: blue;
+	font-size: 20px;
 	border-right: 1px solid black;
 }
 
 label[for="fahrenheit"] {
 	
-}
-
-.temp-Unit-button label {
-	font-size: 20px;
-	padding: 2px 6px;
-	flex-basis: 40px;
 }
 
 .temp-container {
@@ -82,7 +76,7 @@ label[for="fahrenheit"] {
 }
 
 .weather-description, .wind-speed {
-	font-size: 16px;
+	font-size: 18px;
 	border: 1px solid gray;
 	border-radius: 5px;
 	padding: 12px;
