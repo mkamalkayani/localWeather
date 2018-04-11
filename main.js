@@ -34,13 +34,17 @@ fetch(URL)
 		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
 		$("input#degree").on("change", function(){
 			$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");  //Make unit "C"
-			$("label[for=degree]").css("background-color","grey");
-			$("label[for=fahrenheit]").css("background-color","lightblue");
+			$("label[for=degree]").css("color","blue");
+			$("label[for=degree]").css("font-size","22px");
+			$("label[for=fahrenheit]").css("color","black");
+			$("label[for=fahrenheit]").css("font-size","20px");
 		})
 		$("input#fahrenheit").on("change", function(){
 			$(".temperature").html(Math.floor(wData.main.temp * 9/5 + 32) + " &#8457")  //Make unit "F"
-			$("label[for=degree]").css("background-color","lightblue");
-			$("label[for=fahrenheit]").css("background-color","grey");
+			$("label[for=degree]").css("color","black");
+			$("label[for=degree]").css("font-size","20px");
+			$("label[for=fahrenheit]").css("color","blue");
+			$("label[for=fahrenheit]").css("font-size","22px");
 		})
 
 		$()
