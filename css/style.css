@@ -30,16 +30,20 @@ h1{
 
 .temp-Unit-button {
 	display: flex;
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
 }
 
 label {
-	background-color: lightblue;
+	/*background-color: lightblue;*/
 	margin:auto;
 }
 
 input[name="Unit"] {
 	display: none;
+}
+
+label[for="degree"] {
+	/*background-color: grey;*/
 }
 
 .temp-Unit-button label {
@@ -61,10 +65,6 @@ input[name="Unit"] {
 
 .temp-button {
 	align-items: right;
-}
-
-input:checked {
-	background-color: red;
 }
 
 .weather_icon {

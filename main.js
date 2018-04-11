@@ -33,11 +33,17 @@ fetch(URL)
 
 		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
 		$("input#degree").on("change", function(){
-			$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
+			$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");  //Make unit "C"
+			$("label[for=degree]").css("background-color","grey");
+			$("label[for=fahrenheit]").css("background-color","lightblue");
 		})
 		$("input#fahrenheit").on("change", function(){
-			$(".temperature").html(Math.floor(wData.main.temp * 9/5 + 32) + " &#8457")
+			$(".temperature").html(Math.floor(wData.main.temp * 9/5 + 32) + " &#8457")  //Make unit "F"
+			$("label[for=degree]").css("background-color","lightblue");
+			$("label[for=fahrenheit]").css("background-color","grey");
 		})
+
+		$()
 	});
 
 });
