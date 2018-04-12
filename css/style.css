@@ -2,17 +2,34 @@
 	background-color: #24C2DA;
 	padding: 30px;
 	max-width: 768px;
+	min-height: 400px;
 	border-radius: 10px;
 	background: lightblue url("../images/clear-sky.jpg") no-repeat fixed center; 
 }
 
-h1{
-	text-align: center;
-	margin-bottom: 25px;
-	font-size: 24px;
+.search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #067eb2;
+	color: white;
 }
 
-.flex1{
+h1{
+	padding: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 10px;
+	/*font-size: 24px;*/
+}
+
+input[name="search"] {
+	flex-grow: 1;
+	max-width: 400px;
+	padding: 3px 6px;
+}
+
+.flexUser{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
