@@ -16,11 +16,12 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-	<div class="search">
-		<h1>Weather</h1>
-		<input type="text" name="search" placeholder="Search Location">
-	</div>
 	<div class="container">
+	<div class="search">
+		<h1 class="brand">Weather</h1>
+		<input type="text" name="search" placeholder="Enter a City">
+	</div>
+	<div class="location-container">
 		<div class="flexUser">
 			<p class="user-location">user location</p>
 			<div class="temp-Unit-button">
@@ -35,11 +36,16 @@
 			<img src="" class="weather-icon">
 			<p class="temperature"></p>
 		</div>
-		<div class="user-container">
-			
-			<p class="weather-description">weather description</p>
-			<p class="wind-speed">Wind speed</p>
+		<div class="weather-data">			
+			<p class="weather-description"></p>
+			<p class="wind-speed"></p>
+			<p class="wind-direction"></p>
 		</div>
+	</div>
+
+	<footer>
+		<p>some text</p>
+	</footer>
 	</div>
 <script src="main.js"></script>
 </body>
