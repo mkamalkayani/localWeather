@@ -19,7 +19,7 @@
 	<div class="container">
 	<div class="search">
 		<h1 class="brand">Weather</h1>
-		<input type="text" name="search" placeholder="Enter a City">
+		<input id="search-term" type="text" name="search" placeholder="Enter a City">
 	</div>
 	<div class="location-container">
 		<div class="flexUser">
@@ -43,10 +43,20 @@
 		</div>
 	</div>
 
-	<footer>
-		<p>some text</p>
-	</footer>
+		<footer>
+			<p>Text for footer</p>
+		</footer>
 	</div>
+
+	<script>
+		function activatePlacesSearch(){
+			var input = document.getElementById("search-term");
+			var autocomplete = new google.maps.places.Autocomplete(input);
+		}
+	</script>
 <script src="main.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UqSgWxxoQD9hrC3L1d9b-AZ5bcq5jpc&libraries=places&callback=activatePlacesSearch"></script>
 </body>
 </html>
+
+<!-- AIzaSyB6UqSgWxxoQD9hrC3L1d9b-AZ5bcq5jpc -->

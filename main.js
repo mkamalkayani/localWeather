@@ -1,5 +1,10 @@
 $(function(){
 
+function activatePlacesSearch(){
+			var input = document.getElementById("search-term");
+			var autocomplete = new google.maps.places.Autocomplete(input);
+		}
+
 function degToCompass(num){
     const val =  Math.floor((num / 45) + 0.5);
     const arr = ["N","NE","E", "SE","S","SW","W","NW"];
@@ -25,7 +30,7 @@ fetch(URL)
 		return response.json();
 	})
 	.then(function(wData){   //wData is Weather Data
-		//console.log(wData)
+		// console.log(wData)
 		$(".user-location").html(wData.name + ", " + wData.sys.country);
 		$(".weather-description").html(wData.weather["0"].description);
 		$(".wind-speed").html("Wind: " + wData.wind.speed + " knots " + "from " +  degToCompass(wData.wind.deg));

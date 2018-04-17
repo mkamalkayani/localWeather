@@ -17,7 +17,8 @@
 .location-container{
 	background-color: #24C2DA;
 	height: 75vh;
-	background: lightblue url("../images/clear-sky.jpg") no-repeat fixed center; 
+	background: lime url("../images/clear-sky.jpg") no-repeat fixed center;
+	background-size: cover; 
 }
 
 h1{
@@ -48,10 +49,16 @@ input[name="search"] {
 
 .temp-Unit-button {
 	display: flex;
-	margin-top: 40px;
-	margin-right: 5px;
 	position: absolute;
-	right: 0;
+	right: 5%;
+	top: 40%;
+}
+
+@media(min-width: 768px){
+	.temp-Unit-button {
+		right: 25%;
+		top: 40%;
+	}
 }
 
 .temp-Unit-button label {
