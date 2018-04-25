@@ -14,9 +14,25 @@
 	padding: 10px 15px;
 }
 
+@media(max-width: 425px){
+	.search{
+		flex-direction: column;
+		height: auto;
+	}
+
+	#search-bar{
+		width: 80%;
+	}
+
+	.brand{
+		margin: 0;
+		padding-top: 0;
+	}
+}
+
 .location-container{
 	background-color: #24C2DA;
-	height: 75vh;
+	height: 70vh;
 	/*background: lime url("../images/clear-sky.jpg") no-repeat fixed center;*/
 	background-color: lightblue;
 	background-size: cover; 
@@ -118,3 +134,4 @@ footer a{
 	color: white;
 	padding: 5px;
 }
+

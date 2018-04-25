@@ -4,14 +4,14 @@ var userCordinates = [54.35,13.05];
 var URL = createURL(userCordinates);
 fetchData(URL);
 
-var searchTerm = document.getElementById("search-term"); 
+var searchBar = document.getElementById("search-bar"); 
 
 //Event to search the weather data for the entered address
-searchTerm.addEventListener('change',handleSearch);
+searchBar.addEventListener('change',handleSearch);
 
 //Event to clear the search bar
-searchTerm.addEventListener('click',function(){
-	$("#search-term").val("");
+searchBar.addEventListener('click',function(){
+	$("#search-bar").val("");
 });
 
 //Fetches weather data and updates the webpage
@@ -25,7 +25,6 @@ function fetchData(URL){
 		$(".user-location").html(wData.name + ", " + wData.sys.country);
 		$(".weather-description").html(wData.weather["0"].description);
 		$(".wind-speed").html("Wind: " + wData.wind.speed + " knots " + "from " +  degToCompass(wData.wind.deg));
-		// $(".wind-direction").html("Wind: " + degToCompass(wData.wind.deg) + from + " " + );
 		$(".weather-icon").attr('src',"https://openweathermap.org/img/w/" + wData.weather["0"].icon + ".png");
 
 		$(".temperature").html(Math.floor(wData.main.temp) + " &#8451");
@@ -77,7 +76,7 @@ function degToCompass(num){
 function handleSearch(){
 	return new Promise(function(resolve,reject){
 	var geocoder = new google.maps.Geocoder();
-	var address = document.getElementById('search-term').value;
+	var address = document.getElementById('search-bar').value;
 
     	geocoder.geocode({ 'address': address }, function (results, status) {
 

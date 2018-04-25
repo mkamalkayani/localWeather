@@ -17,10 +17,14 @@
 </head>
 <body>
 	<div class="container">
+
+	<!--Search Bar  -->
 	<div class="search">
 		<h1 class="brand">Weather</h1>
-		<input id="search-term" type="text" name="search" placeholder="Enter a City">
+		<input id="search-bar" type="text" name="search" placeholder="Enter a City">
 	</div>
+
+
 	<div class="location-container">
 		<div class="flexUser">
 			<p class="user-location">user location</p>
@@ -62,7 +66,7 @@
 
 	<script>
 		function activatePlacesSearch(){
-			var input = document.getElementById("search-term");
+			var input = document.getElementById("search-bar");
 			var autocomplete = new google.maps.places.Autocomplete(input);
 		}
 	</script>
