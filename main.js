@@ -4,9 +4,17 @@ var userCordinates = [54.35,13.05];
 var URL = createURL(userCordinates);
 fetchData(URL);
 
-//Event to search the weather data for the entered address
-document.getElementById("search-term").addEventListener('change',handleSearch);
+var searchTerm = document.getElementById("search-term"); 
 
+//Event to search the weather data for the entered address
+searchTerm.addEventListener('change',handleSearch);
+
+//Event to clear the search bar
+searchTerm.addEventListener('click',function(){
+	$("#search-term").val("");
+});
+
+//Fetches weather data and updates the webpage
 function fetchData(URL){
 	fetch(URL)
 	.then(function(response){
@@ -38,7 +46,7 @@ function fetchData(URL){
 	})
 }
 
-//User Current Geolocation
+//Retrieves user's Current Geolocation
 function currentlocation(){
 	if(!navigator.geolocation){
 		console.log("Geolocation not supported by the browser");
@@ -52,7 +60,7 @@ function currentlocation(){
 	}
 }
 
-//Weather api URL
+//Creates weather api URL
 function createURL([lat,lon]){
 	var URL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&" + "lon=" + lon +"&units=metric&APPID=5f99e28b1a3c92cec71c5ca344fccde7";
 	return URL;

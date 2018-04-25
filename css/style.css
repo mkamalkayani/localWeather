@@ -17,7 +17,8 @@
 .location-container{
 	background-color: #24C2DA;
 	height: 75vh;
-	background: lime url("../images/clear-sky.jpg") no-repeat fixed center;
+	/*background: lime url("../images/clear-sky.jpg") no-repeat fixed center;*/
+	background-color: lightblue;
 	background-size: cover; 
 }
 
@@ -99,8 +100,23 @@ label[for="degree"] {
 	align-items: center;
 }
 
-footer {
+/****** Footer *************************************************************/
+footer .container{
+	color: white;
 	margin: 0;
-	background-color: #067eb2;
-	height: 15vh;
+	/*height: 15vh;*/
+	background: #28a745;
+}
+
+footer p{
+	margin: 0;
+	padding: 10px;
+}
+
+footer a{
+	color: white;
+}
+
+footer a{
+	padding: 5px;
 }
