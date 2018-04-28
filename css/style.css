@@ -1,6 +1,8 @@
 .container {
 	/*max-width: 768px;*/
 	padding: 0;
+	height: 100vh;
+	position: relative;
 }
 
 .search {
@@ -28,15 +30,11 @@
 		margin: 0;
 		padding-top: 0;
 	}
-
-	.location-container{
-		height: 40vh;
-	}
 }
 
 .location-container{
 	background-color: #24C2DA;
-	height: 80vh;
+	height: 75vh;
 	/*background: lime url("../images/clear-sky.jpg") no-repeat fixed center;*/
 	background-color: lightblue;
 	background-size: cover; 
@@ -128,6 +126,7 @@ footer .container{
 	color: white;
 	margin: 0;
 	background: #28a745;
+	max-height: 110px;
 }
 
 footer p{
