@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom CSS -->
+	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	
 	<!-- Font Awesome -->
@@ -17,52 +17,50 @@
 </head>
 <body>
 	<div class="container">
+		<!--Search Bar  -->
+		<div class="search">
+			<h1 class="brand">Weather</h1>
+			<input id="search-bar" type="text" name="search" placeholder="Enter a City">
+		</div>
 
-	<!--Search Bar  -->
-	<div class="search">
-		<h1 class="brand">Weather</h1>
-		<input id="search-bar" type="text" name="search" placeholder="Enter a City">
-	</div>
+		<div class="location-container">
+			<div class="flexUser">
+				<p class="user-location">user location</p>
+				<div class="temp-Unit-button">
+					<label for="degree">&deg;C</label>
+					<input type="radio" id="degree" name="Unit" value="C" checked>
 
-
-	<div class="location-container">
-		<div class="flexUser">
-			<p class="user-location">user location</p>
-			<div class="temp-Unit-button">
-				<label for="degree">&deg;C</label>
-				<input type="radio" id="degree" name="Unit" value="C" checked>
-
-				<label for="fahrenheit">&deg;F</label>
-				<input type="radio" id="fahrenheit" name="Unit" value="F">
+					<label for="fahrenheit">&deg;F</label>
+					<input type="radio" id="fahrenheit" name="Unit" value="F">
+				</div>
+			</div>
+			<div class="temp-container">
+				<img src="" class="weather-icon">
+				<p class="temperature"></p>
+			</div>
+			<div class="weather-data">			
+				<p class="weather-description"></p>
+				<p class="wind-speed"></p>
+				<p class="wind-direction"></p>
 			</div>
 		</div>
-		<div class="temp-container">
-			<img src="" class="weather-icon">
-			<p class="temperature"></p>
-		</div>
-		<div class="weather-data">			
-			<p class="weather-description"></p>
-			<p class="wind-speed"></p>
-			<p class="wind-direction"></p>
-		</div>
-	</div>
-
 		<!-- Footer -->
-	<footer>
-		<div class="container text-center">
-			<p class="">Designed and Developed by mkamalkayani &copy; 2018 </p>
-			<a href="https://facebook.com/mkamalkayani" target="_blank">
-				<i class="fab fa-facebook-square fa-2x"></i>
-			</a>
-			<a href="https://github.com/mkamalkayani" target="_blank">
-				<i class="fab fa-github-square  fa-2x"></i>
-			</a>
-			<a href="https://www.freecodecamp.org/mkamalkayani" target="_blank">
-				<i class="fab fa-free-code-camp fa-2x"></i>
-			</a>
-		</div>
-	</footer>
+		<footer>
+			<div class="container text-center">
+				<p class="">Designed and Developed by mkamalkayani &copy; 2018 </p>
+				<a href="https://facebook.com/mkamalkayani" target="_blank">
+					<i class="fab fa-facebook-square fa-2x"></i>
+				</a>
+				<a href="https://github.com/mkamalkayani" target="_blank">
+					<i class="fab fa-github-square  fa-2x"></i>
+				</a>
+				<a href="https://www.freecodecamp.org/mkamalkayani" target="_blank">
+					<i class="fab fa-free-code-camp fa-2x"></i>
+				</a>
+			</div>
+		</footer>
 	</div>
+	
 
 	<script>
 		function activatePlacesSearch(){
@@ -70,8 +68,8 @@
 			var autocomplete = new google.maps.places.Autocomplete(input);
 		}
 	</script>
-<script src="main.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UqSgWxxoQD9hrC3L1d9b-AZ5bcq5jpc&libraries=places&callback=activatePlacesSearch"></script>
+	<script src="main.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UqSgWxxoQD9hrC3L1d9b-AZ5bcq5jpc&libraries=places&callback=activatePlacesSearch"></script>
 </body>
 </html>
 

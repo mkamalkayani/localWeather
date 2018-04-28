@@ -28,11 +28,15 @@
 		margin: 0;
 		padding-top: 0;
 	}
+
+	.location-container{
+		height: 40vh;
+	}
 }
 
 .location-container{
 	background-color: #24C2DA;
-	height: 70vh;
+	height: 80vh;
 	/*background: lime url("../images/clear-sky.jpg") no-repeat fixed center;*/
 	background-color: lightblue;
 	background-size: cover; 
@@ -118,10 +122,11 @@ label[for="degree"] {
 
 /****** Footer *************************************************************/
 footer .container{
+	position: absolute;
+	bottom: 0;
 	padding: 10px;
 	color: white;
 	margin: 0;
-	height: 15vh;
 	background: #28a745;
 }
 
