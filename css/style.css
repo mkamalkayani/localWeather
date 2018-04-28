@@ -70,13 +70,13 @@ input[name="search"] {
 	display: flex;
 	position: absolute;
 	right: 5%;
-	top: 40%;
+	top: 100%;
 }
 
 @media(min-width: 768px){
 	.temp-Unit-button {
 		right: 25%;
-		top: 40%;
+		top: 100%;
 	}
 }
 
