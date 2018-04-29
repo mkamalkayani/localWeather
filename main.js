@@ -1,22 +1,26 @@
 $(function(){
-	//Default user coordinates
-	var userCordinates = [52.5,13.4];
-	weatherUpdate(userCordinates);
+	
+	//Default coordinates
+	var lat = 52.5;
+	var lon = 13.4;
+	fetchData(lat,lon);
 	currentLocation();
 
-var searchBar = document.getElementById("search-bar");
-//Event to search the weather data for the entered address
-searchBar.addEventListener('change',handleSearch);
+	// Event to clear the search bar
+	var input = document.getElementById("search-bar");
+	input.addEventListener('click',function(){
+		$("#search-bar").val("");
+	});
+	
+	// Search bar autocomplete
+	var autocomplete = new google.maps.places.Autocomplete(input,{type:["geocode"]});
+	autocomplete.addListener('place_changed', function() {
+		var lat = autocomplete.getPlace().geometry.location.lat();
+		var lon = autocomplete.getPlace().geometry.location.lng();		
+		fetchData(lat,lon);
+	})
 
-//Event to clear the search bar
-searchBar.addEventListener('click',function(){
-	$("#search-bar").val("");
-});
-
-function weatherUpdate(userCordinates){
-	var URL = createURL(userCordinates);
-	fetchData(URL);
-}
+//Funtions *****************************************************************
 
 function currentLocation(){
 	return new Promise(function(resolve,reject){
@@ -31,13 +35,14 @@ function currentLocation(){
 			})				
 		}
 	})
-	.then(function(userCordinates){
-		weatherUpdate(userCordinates);
+	.then(function([lat,lon]){
+		fetchData(lat,lon);
 	});
 }
 
 //Fetches weather data and updates the webpage
-function fetchData(URL){
+function fetchData(lat,lon){
+	var URL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&" + "lon=" + lon +"&units=metric&APPID=5f99e28b1a3c92cec71c5ca344fccde7";
 	fetch(URL)
 	.then(function(response){
 		return response.json();
@@ -67,36 +72,11 @@ function fetchData(URL){
 	})
 }
 
-//Creates weather api URL
-function createURL([lat,lon]){
-	var URL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&" + "lon=" + lon +"&units=metric&APPID=5f99e28b1a3c92cec71c5ca344fccde7";
-	return URL;
-}
-
 //Degree to compass converter
 function degToCompass(num){
 	const val =  Math.floor((num / 45) + 0.5);
 	const arr = ["N","NE","E", "SE","S","SW","W","NW"];
 	return arr[(val % 8)]
-}
-
-//Function to handle change event on searh bar
-function handleSearch(){
-	return new Promise(function(resolve,reject){
-		var geocoder = new google.maps.Geocoder();
-		var address = document.getElementById('search-bar').value;
-
-		geocoder.geocode({ 'address': address }, function (results, status) {
-
-			if (status == google.maps.GeocoderStatus.OK) {
-				latitude = results[0].geometry.location.lat();
-				longitude = results[0].geometry.location.lng();
-				resolve([latitude,longitude])
-			}
-		})} 
-		)
-	.then(coordinates => createURL(coordinates))
-	.then(URL => fetchData(URL))
 }
 
 })
